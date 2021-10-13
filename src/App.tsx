@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { FormStep1 } from './pages/FormStep1';
+import { FormStep2 } from './pages/FormStep2';
+import { FormStep3 } from './pages/FormStep3';
+import Reset from "./styles/GlobalStyle"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Reset />
+      <BrowserRouter>
+        <Route exact path="/" component={FormStep1} />
+        <Route exact path="/step2" component={FormStep2} />
+        <Route exact path="/step3" component={FormStep3} />
+      </BrowserRouter>
+    </>
   );
 }
 
